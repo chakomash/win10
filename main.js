@@ -11,13 +11,13 @@
   
 firebase.initializeApp(firebaseConfig);
 
-var messagesRef = firebase.database().ref('contactformmessages');
+var mess = firebase.database().ref('users');
 
 $('#contactForm').submit(function(e) {
     e.preventDefault();
  
-    var newMessageRef = messagesRef.push();
-    newMessageRef.set({
+    var newMess = mess.push();
+    newMess.set({
         name: $('.fullname').val(),
         email: $('.email').val(),
         subject: $('.subject').val(),
